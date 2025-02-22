@@ -1,5 +1,6 @@
 FROM haproxy:alpine
 RUN apk add --no-cache certbot openssl bash certbot-nginx
+RUN pwd
 COPY ./certbot_entrypoint.sh ./
 RUN chmod +x /certbot_entrypoint.sh
 
