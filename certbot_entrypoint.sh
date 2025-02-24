@@ -4,6 +4,7 @@ set -e
 # Check if certificates exist, and obtain if not
 if [ ! -f /etc/letsencrypt/live/$domain/combined.pem ]; then
     echo "Obtaining certificates..."
+    echo $email $domain
     certbot certonly --standalone --agree-tos --no-eff-email --email $email -d $domain
     if [ $? -ne 0 ]; then
         echo "Failed to obtain certificates, exiting..."
