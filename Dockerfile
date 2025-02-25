@@ -1,6 +1,6 @@
 FROM haproxy:alpine
 USER root
-RUN apk add --no-cache certbot-dns openssl bash
+RUN apk add --no-cache certbot certbot-dns openssl bash
 COPY ./certbot_entrypoint.sh /certbot_entrypoint.sh
 RUN chmod +x /certbot_entrypoint.sh
 
