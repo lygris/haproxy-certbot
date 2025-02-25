@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-ls -la /
+
 # Check if certificates exist, and obtain if not
 if [ ! -f /etc/letsencrypt/live/$domain/combined.pem ]; then
     echo "Obtaining certificates..."
