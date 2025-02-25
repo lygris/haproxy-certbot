@@ -9,7 +9,7 @@ if [ ! -f /etc/letsencrypt/live/$domain/combined.pem ]; then
         echo "Failed to obtain certificates, exiting..."
         exit 1
     fi
-    cat /etc/letsencrypt/live/yourdomain.com/fullchain.pem /etc/letsencrypt/live/yourdomain.com/privkey.pem > /etc/letsencrypt/live/yourdomain.com/combined.pem
+    cat /etc/letsencrypt/live/$domain/fullchain.pem /etc/letsencrypt/live/$domain/privkey.pem > /etc/letsencrypt/live/yourdomain.com/combined.pem
 fi
 
 # Start HAProxy
