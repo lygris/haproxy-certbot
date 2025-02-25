@@ -4,8 +4,7 @@ set -e
 # Check if certificates exist, and obtain if not
 if [ ! -f /etc/letsencrypt/live/$domain/combined.pem ]; then
     echo "Obtaining certificates..."
-    echo $email $domains
-    certbot certonly --agree-tos --no-eff-email --email $email -d $domains --preferred-challenges dns-01 --authenticator dns-cloudflare --dns-cloudflare-credentials cloudflare.ini
+    certbot certonly --agree-tos --no-eff-email --email $email -d $domains --preferred-challenges dns-01 --authenticator dns-cloudflare --dns-cloudflare-credentials /cloudflare.ini
     if [ $? -ne 0 ]; then
         echo "Failed to obtain certificates, exiting..."
         exit 1
