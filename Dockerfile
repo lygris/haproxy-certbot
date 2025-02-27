@@ -7,6 +7,7 @@ RUN wget -O dataplaneapi.apk https://github.com/haproxytech/dataplaneapi/release
 RUN apk add --allow-untrusted dataplaneapi.apk
 RUN mkdir /run/haproxy
 RUN touch /run/haproxy/admin.sock
+COPY ./dataplaneapi.yml /etc/haproxy/dataplaneapi.yaml
 
 VOLUME /etc/letsencrypt
 EXPOSE 80 443
