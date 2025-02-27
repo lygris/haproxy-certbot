@@ -5,6 +5,8 @@ COPY ./certbot_entrypoint.sh /certbot_entrypoint.sh
 RUN chmod +x /certbot_entrypoint.sh
 RUN wget -O dataplaneapi.apk https://github.com/haproxytech/dataplaneapi/releases/download/v3.1.1/dataplaneapi_3.1.1_linux_amd64.apk 
 RUN apk add --allow-untrusted dataplaneapi.apk
+RUN mkdir /run/haproxy
+RUN touch /run/haproxy/admin.sock
 
 VOLUME /etc/letsencrypt
 EXPOSE 80 443
